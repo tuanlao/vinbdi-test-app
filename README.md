@@ -36,3 +36,7 @@ http://localhost:3000
 ```
 yarn run start:prod
 ```
+
+## Demo
+
+You can see my app demo on [Heroku](https://vinbdi-test.herokuapp.com)
