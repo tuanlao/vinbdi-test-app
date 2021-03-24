@@ -1,5 +1,7 @@
-import { GithubRepoFormState } from 'app/pages/HomePage/Features/GithubRepoForm/slice/types';
 import { ThemeState } from 'styles/theme/slice/types';
+import { GiphySearchState } from 'app/pages/GiphySearch/slice/types';
+import { LayoutState } from 'app/pages/Layout/slice/types';
+import { GiphyFavouritesState } from 'app/pages/GiphyFavourites/slice/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -10,6 +12,8 @@ import { ThemeState } from 'styles/theme/slice/types';
 */
 export interface RootState {
   theme?: ThemeState;
-  githubRepoForm?: GithubRepoFormState;
+  giphySearch?: GiphySearchState;
+  layout?: LayoutState;
+  giphyFavourites?: GiphyFavouritesState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

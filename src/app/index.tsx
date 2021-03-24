@@ -12,8 +12,10 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from '../styles/global-styles';
 
-import { HomePage } from './pages/HomePage/Loadable';
+import Layout from './pages/Layout';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
+import { GiphySearch } from './pages/GiphySearch/Loadable';
+import { GiphyFavourites } from './pages/GiphyFavourites/Loadable';
 import { useTranslation } from 'react-i18next';
 
 export function App() {
@@ -21,17 +23,20 @@ export function App() {
   return (
     <BrowserRouter>
       <Helmet
-        titleTemplate="%s - React Boilerplate"
-        defaultTitle="React Boilerplate"
+        titleTemplate="%s - VinBDI"
+        defaultTitle="VinBDI"
         htmlAttributes={{ lang: i18n.language }}
       >
-        <meta name="description" content="A React Boilerplate application" />
+        <meta name="description" content="VinBDI test application" />
       </Helmet>
-
-      <Switch>
-        <Route exact path={process.env.PUBLIC_URL + '/'} component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={GiphySearch} />
+          <Route exact path="/search" component={GiphySearch} />
+          <Route exact path="/favourites" component={GiphyFavourites} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Layout>
       <GlobalStyle />
     </BrowserRouter>
   );

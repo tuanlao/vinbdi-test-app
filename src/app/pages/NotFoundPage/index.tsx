@@ -2,18 +2,19 @@ import * as React from 'react';
 import styled from 'styled-components/macro';
 import { P } from './P';
 import { Link } from 'app/components/Link';
-import { NavBar } from 'app/components/NavBar';
 import { Helmet } from 'react-helmet-async';
 import { StyleConstants } from 'styles/StyleConstants';
+import { messages } from './messages';
+import { useTranslation } from 'react-i18next';
 
 export function NotFoundPage() {
+  const { t } = useTranslation();
   return (
     <>
       <Helmet>
         <title>404 Page Not Found</title>
         <meta name="description" content="Page not found" />
       </Helmet>
-      <NavBar />
       <Wrapper>
         <Title>
           4
@@ -22,8 +23,8 @@ export function NotFoundPage() {
           </span>
           4
         </Title>
-        <P>Page not found.</P>
-        <Link to={process.env.PUBLIC_URL + '/'}>Return to Home Page</Link>
+        <P>{t(...messages.notFound())}</P>
+        <Link to={'/'}>{t(...messages.returnHome())}</Link>
       </Wrapper>
     </>
   );

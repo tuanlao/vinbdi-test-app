@@ -1,3 +1,8 @@
 import { RootState } from './RootState';
 
-export type { RootState };
+interface ActionStatus {
+  type: 'success' | 'error';
+  message: string;
+}
+
+export type { RootState, ActionStatus };

@@ -1,0 +1,10 @@
+{
+  "notFoundFeature": {
+    "notFound": "Page not found.",
+    "returnHome": "Return to Home Page"
+  },
+  "headerNav": {
+    "search": "Search",
+    "favourites": "Favourites"
+  }
+}
